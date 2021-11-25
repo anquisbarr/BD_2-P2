@@ -1,6 +1,8 @@
 import nltk
+import numpy as np
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+
 
 # Returns clean tokens from a tweet given
 def stopwords_stemmer(tweet):
@@ -19,3 +21,5 @@ def stopwords_stemmer(tweet):
     
     return clean_tokens
 
+def cosine(q, doc):
+    return np.dot(q, doc) / (np.linalg.norm(q) * np.linalg.norm(doc))

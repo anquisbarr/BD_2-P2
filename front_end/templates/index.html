@@ -37,7 +37,7 @@
                 <div class="card-body">
                 <form action="/search_query" method="POST">
                     <input type="text" name="query" placeholder="Consulta">
-                    <button type="submit">
+                    <button type="submit" class="btn btn-info mx-lg-2">
                         Enviar
                     </button>
                 </form>
@@ -49,7 +49,7 @@
             <div class="card border-primary mb-3">
                 <div class="card-header">Tweets</div>
                 <div class="card-body">
-            <table class="table table-striped table-bordered">
+            <table class="table table-hover table-bordered table-striped">
                 <thead>
                     <tr>
                         <td>Date</td>
@@ -74,8 +74,12 @@
         </div>
 
     </div>
-    <footer>
-        Derechos reservados 2021 
+    <footer style = "
+    margin-left: 10px;
+	height: 60px;
+	position: relative;
+	bottom: 0;">
+        Derechos reservados para el curso de Base de Datos 2 en Utec - 2021 
     </footer>
     
 </body>

@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def Index():
-    with open('tweets.json') as file:
+    with open('result_db.json') as file:
         data = json.load(file)
     return render_template('index.html', consultas = data)
 

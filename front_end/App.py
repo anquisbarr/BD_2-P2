@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
-
+import json
 app = Flask(__name__)
 
 @app.route('/')
 def Index():
-    return render_template('index.html')
+    with open('result_db.json') as file:
+        data = json.load(file)
+    return render_template('index.html', consultas = data)
 
 @app.route('/search_query', methods=['POST'])
 def SearchQuery():

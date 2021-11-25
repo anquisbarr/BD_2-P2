@@ -1,6 +1,63 @@
-<form action="/search_query" method="POST">
-    <input type="text" name="query" placeholder="Consulta">
-    <button type="submit">
-        Enviar
-    </button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Consultas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/vapor/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+
+        <div class="col-md-5">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Ingrese su consulta</div>
+                <div class="card-body">
+                <form action="/search_query" method="POST">
+                    <input type="text" name="query" placeholder="Consulta">
+                    <button type="submit">
+                        Enviar
+                    </button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="card border-primary mb-3">
+                <div class="card-header">Tweets</div>
+                <div class="card-body">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Text</td>
+                        <td>User_ID</td>
+                        <td>User_Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in consultas %}
+                    <tr>
+                        <td>{{ c['date'] }}</td>
+                        <td>{{ c['text'] }}</td>
+                        <td>{{ c['user_id'] }}</td>
+                        <td>{{ c['user_name'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        Derechos reservados 2021 
+    </footer>
+    
+</body>
+</html>
+

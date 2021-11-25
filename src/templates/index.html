@@ -29,14 +29,16 @@
         </div>
     </nav>
 
+
     <div class="container mt-5">
 
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
                 <div class="card-header">Ingrese su consulta</div>
                 <div class="card-body">
                 <form action="/consulta" method="POST">
-                    <input type="text" name="query" placeholder="Consulta">
+                    <input type="text" name="query" placeholder="Consulta" class="mb-3">
+                    <input type="text" name="tweets" placeholder="Número de Tweets">
                     <button type="submit" class="btn btn-info mx-lg-2">
                         Enviar
                     </button>

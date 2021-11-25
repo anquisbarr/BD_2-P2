@@ -16,7 +16,9 @@ def Index():
 def SearchQuery():
     if request.method == 'POST':
         query = request.form['query']
-        data = retrieve_tweets(query, 10)
+        k = request.form['tweets']
+        valor_k = int(k)
+        data = retrieve_tweets(query, valor_k)
         data = json.loads(data)
         return render_template('index.html', consultas = data)
 
